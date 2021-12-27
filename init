@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source /etc/sysconfig/network-scripts/ifcfg-$1
+source /etc/128technology/plugins/network-scripts/common/namespace_helpers
+
+KNI_NAME=$1
+KNI_GW=${6#"--kni-gateway="}
+NS=$2
+NS_NAME=$(namespace_get_name $NS)
+
+create_namespace $NS
+add_interface_to_namespace $NS $KNI_NAME
+namespace_interface_up $NS $KNI_NAME
+namespace_execute $NS ip address add $IPADDR/$PREFIX dev $KNI_NAME
+namespace_execute $NS ip route add default via $KNI_GW
+namespace_execute $NS sysctl -w net.ipv4.ip_forward=1 &>/dev/null
+systemctl restart 128t-tunsafe@$NS_NAME

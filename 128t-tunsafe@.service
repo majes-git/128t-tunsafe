@@ -1,0 +1,11 @@
+[Unit]
+Description=Tunsafe daemon for Session Smart Router
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/ip netns exec %i /usr/local/sbin/tunsafe start /etc/128technology/tunsafe/%i.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source /etc/128technology/plugins/network-scripts/common/namespace_helpers
+
+for arg in "$@"
+do
+case $arg in
+  --namespace=*)
+  NAMESPACE="${arg#*=}"
+  shift
+  ;;
+esac
+done
+
+NAMESPACE_NAME=$(namespace_get_name $NAMESPACE)
+
+systemctl is-active --quiet 128t-tunsafe@$NAMESPACE_NAME
+if [ $? -eq 0 ]; then
+  echo "up"
+else
+  echo "down"
+fi
