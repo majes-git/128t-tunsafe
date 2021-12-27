@@ -6,7 +6,7 @@ Tunsafe and scripts to be used with 128T (Session Smart Router)
 ```
 $ unzip 128t-tunsafe-main.zip
 $ cd 128t-tunsafe-main
-$ bash install.bash
+$ sudo bash install.bash
 ```
 
 ## 128T/SSR Config
