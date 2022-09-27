@@ -1,0 +1,22 @@
+server:
+  dns: 8.8.8.8
+  host: example.com
+  keepalive: 25
+  mtu: 1400
+  port: 51820
+  privkey: mFqsTcWNJd09zxeGVX6wF3XTfhTHlE/uW1gkyk9RpUY=
+  pubkey: gd+rUmSBjhdh8FbCqova64YnunxjYVxBNxuquzXhyC8=
+  routes: 0.0.0.0/0
+  tunnel_address: 10.0.0.1/32
+  issuer: Acme Inc.
+peers:
+  jdoe:
+    ip_address: 10.0.0.12/32
+    privkey: mFqsTcWNJd09zxeGVX6wF3XTfhTHlE/uW1gkyk9RpUY=
+    pubkey: gd+rUmSBjhdh8FbCqova64YnunxjYVxBNxuquzXhyC8=
+    passphrase: KS3TZ54SBCJOCRUNSPJ6ZJAUSB26FXXD
+  mmustermann:
+    ip_address: 10.0.0.11/32
+    privkey: mFqsTcWNJd09zxeGVX6wF3XTfhTHlE/uW1gkyk9RpUY=
+    pubkey: gd+rUmSBjhdh8FbCqova64YnunxjYVxBNxuquzXhyC8=
+    passphrase: LXZIZKVMXFPL6GLDI4GAIVFPQQOLXNX3
