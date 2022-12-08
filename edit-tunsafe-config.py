@@ -88,6 +88,7 @@ class Config(object):
         config = '''[Interface]
                     Address = {tunnel_address}
                     PrivateKey = {privkey}
+                    ListenPort = {port}
                  '''.format(**self.data['server'])
 
         for username, peer in self.data['peers'].items():
